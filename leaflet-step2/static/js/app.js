@@ -74,7 +74,6 @@ d3.json(earthquake, function(data) {
       };
 
 
-
    
     $.getJSON(earthquake, function(json) {
       var testlayer = L.geoJson(json, {
@@ -95,9 +94,6 @@ d3.json(earthquake, function(data) {
       //Add slider control to map
       myMap.addControl(sliderControl);
 
-      sliderControl.options.markers.sort(function(a, b) {
-    return (a.feature.properties.time> b.feature.properties.time);
-});
       //And initialize the slider
       sliderControl.startSlider();
     })
@@ -126,26 +122,3 @@ d3.json(earthquake, function(data) {
 
 
 
-//   var testlayer = L.geoJson(camps, {
-//     onEachFeature: function(feature, layer) {
-//         layer.bindPopup(feature.properties.DATE_START);
-//     }
-// });
-
-// var sliderControl = L.control.sliderControl({
-//     position: "topright",
-//     layer: testlayer,
-//     timeAttribute: 'DATE_START'
-// });
-
-// //Make sure to add the slider to the map ;-)
-// map.addControl(sliderControl);
-
-// sliderControl.options.markers.sort(function(a, b) {
-//     return (a.feature.properties.DATE_START > b.feature.properties.DATE_START);
-// });
-
-// //And initialize the slider
-// sliderControl.startSlider();
-
-// $('#slider-timestamp').html(options.markers[ui.value].feature.properties.DATE_START.substr(0, 10));
