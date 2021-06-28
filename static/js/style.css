@@ -3,6 +3,11 @@ body {
   margin: 0;
 }
 
+ .container {
+  border-style: double;
+  text-align: center;
+}
+
 #map,
 body,
 html {
